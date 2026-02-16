@@ -19,9 +19,13 @@ COURSE_FIELDS = [field.name for field in fields(Course)]
 def parse_single_course(course_block: Tag) -> Course:
     """Parse a single course block from Mate Academy page."""
     return Course(
-    name=course_block.select_one(".ProfessionCard_title__m7uno").text,
-    description=course_block.select_one(".ProfessionCard_description__K8weo").text,
-    duration=course_block.select_one(".ProfessionCard_duration__13PwX").text,
+        name=course_block.select_one(".ProfessionCard_title__m7uno").text,
+        description=course_block.select_one(
+            ".ProfessionCard_description__K8weo"
+        ).text,
+        duration=course_block.select_one(
+            ".ProfessionCard_duration__13PwX"
+        ).text,
     )
 
 
